@@ -1,0 +1,44 @@
+{
+  "name": "blazeface-concentration-analysis-by-detecting-facial-features-on-web",
+  "version": "1.0.0",
+  "description": "Simple concentration scoring algorithm using facial features && Blazeface Tensorflow2.0 implementation. All Processes are done in web environment, real-time.",
+  "scripts": {
+    "start": "electron ./dist/electron.js",
+    "build": "webpack --mode production"
+  },
+  "private": true,
+  "author": "cyrojyro <cyrojyro@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@commitlint/config-conventional": "^9.1.1",
+    "@tensorflow/tfjs": "^2.3.0",
+    "@tensorflow/tfjs-node": "^2.3.0",
+    "electron": "^9.1.1",
+    "eslint": "^7.5.0",
+    "face-api.js": "^0.22.2",
+    "perf_hooks": "^0.0.1",
+    "typescript": "^3.9.7",
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "commitlint": "^9.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "webpack-cli": "^3.3.12"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "{src,dist}/*.{js,jsx,ts,tsx,html,css,md}": [
+      "prettier --write"
+    ],
+    "{src,dist}/*.{js,jsx,ts,tsx}": [
+      "eslint"
+    ]
+  }
+}

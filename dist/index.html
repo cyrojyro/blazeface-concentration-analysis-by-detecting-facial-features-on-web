@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face Analysis</title>
+    <script src="./main.js" defer></script>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    canvas,
+    video {
+      position: absolute;
+      display: flex;
+      top: 0px;
+    }
+
+    #controls {
+      position: relative;
+      display: flex;
+      top: 500px;
+    }
+  </style>
+
+  <body>
+    <div>
+      <canvas id="canvas" width="640" height="480"></canvas>
+      <video id="video" width="640" height="480" autoplay muted></video>
+    </div>
+    <div id="controls">
+      <button id="stopButton">stop</button>
+      <button id="resumeButton">resume</button>
+    </div>
+  </body>
+</html>
